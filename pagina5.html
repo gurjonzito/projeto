@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript">
+
+        function enviar() {
+            var nome = document.getElementById('nome').value;
+            var email = document.getElementById('email').value;
+            var comentario = document.getElementById('comentario').value;
+    
+            if (nome === '' || email === '' || comentario === '') {
+                alert('Por favor, preencha todos os campos corretamente.');
+            } else {
+                if (validarEmail(email)) {
+                    alert('Sua mensagem foi enviada!');
+                } else {
+                    alert('Por favor, insira um endereço de e-mail válido.')
+                }
+            }
+        }
+    
+        function validarEmail(email) {
+            var arroba = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return arroba.test(email);
+        }
+    
+    </script>
+
+</head>
+<body>
+    <font face="Courier New">
+        <h1 align="center"><i>Depoimentos de clientes satisfeitos</i></h1>
+    </font>
+    <table align="center" border="1" cellspacing="0" cellpadding="10">
+        <tr>
+            <th><i>Nome</i></th>
+            <th><i>Depoimento</i></th>
+        </tr>
+        <tr>
+            <td>João</td>
+            <td>"Excelente serviço! A equipe da DataWizards resolveu meu problema rapidamente."</td>
+        </tr>
+        <tr>
+            <td>Maria</td>
+            <td>"Estou muito satisfeita com o suporte técnico da DataWizards. Recomendo a todos!"</td>
+        </tr>
+        <tr>
+            <td>Carlos</td>
+            <td>"Sempre que preciso de ajuda com meu computador, recorro à DataWizards. Profissionais competentes e prestativos."</td>
+        </tr>
+    </table>
+
+    <font face="Courier New">
+        <h1 align="center"><i>Deixe sua avaliação abaixo</i></h1>
+    </font>
+
+    <table align="center" border="1">
+        <tr>
+            <td>
+                <form>
+                    <p>
+                        <label>Nome:</label>
+                        <input type="text" name="nome" id="nome" />
+                    </p>
+                    <p>
+                        <label>Email:</label>
+                        <input type="email" name="email" id="email">
+                    </p>
+                    <p>
+                        <textarea cols="40" rows="5" name="comentario" id="comentario"></textarea>
+                    </p>
+                    <p>
+                        <button onclick="enviar()">Enviar mensagem</button>
+                    </p>
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
