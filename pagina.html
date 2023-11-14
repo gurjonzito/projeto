@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro/Login</title>
+
+    <script type="text/javascript">
+
+        function cadastro(){
+            alert('Seu cadastro foi realizado com sucesso!')
+        }
+
+    </script>
+
+</head>
+<body>
+    <font face="Courier New">
+        <h1 align="center"><i>Cadastro</i></h1>
+        <h3 align="center"><i>Por favor, realize o cadastro e insira sua forma de pagamento.</i></h3>
+    </font>
+
+    <table align="center" border="1">
+        <tr>
+            <td>
+                <form>
+                    <p>
+                        <label>Nome:</label>
+                        <input type="text" name="nome" id="nome" />
+                    </p>
+                    <p>
+                        <label>Email:</label>
+                        <input type="email" name="email" id="email">
+                    </p>
+                    <p>
+                        <textarea cols="40" rows="5" name="comentario" id="comentario"></textarea>
+                    </p>
+                    <p>
+                        <button onclick="cadastro()">Cadastrar</button>
+                    </p>
+                </form>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
