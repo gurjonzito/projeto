@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
             var nome = document.getElementById('nome').value;
             var email = document.getElementById('email').value;
             var comentario = document.getElementById('comentario').value;
-    
+
             if (nome === '' || email === '' || comentario === '') {
                 alert('Por favor, preencha todos os campos corretamente.');
             } else {
@@ -22,16 +23,17 @@
                 }
             }
         }
-    
+
         function validarEmail(email) {
             var arroba = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return arroba.test(email);
         }
-    
+
     </script>
 
 </head>
-<body>
+
+<body bgcolor="#CCCCFF">
     <font face="Courier New">
         <h1 align="center"><i>Depoimentos de clientes satisfeitos</i></h1>
     </font>
@@ -58,7 +60,7 @@
         <h1 align="center"><i>Deixe sua avaliação abaixo</i></h1>
     </font>
 
-    <table align="center" border="1">
+    <table align="center" border="1" cellspacing="0">
         <tr>
             <td>
                 <form>
@@ -81,4 +83,5 @@
         </tr>
     </table>
 </body>
+
 </html>

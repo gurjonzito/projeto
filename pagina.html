@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,34 +8,64 @@
 
     <script type="text/javascript">
 
-        function cadastro(){
-            alert('Seu cadastro foi realizado com sucesso!')
+        function cadastro() {
+            var email = document.getElementById('email').value;
+            var senha = document.getElementById('senha').value;
+            if (email === '' || senha === '') {
+                alert('Por favor, preencha todos os campos corretamente.')
+            } else {
+                if (validarEmail(email)) {
+                    if (validarSenha(senha)) {
+                        alert('Cadastro realizado')
+                    } else {
+                        alert('Por favor, insira uma senha com pelo menos 8 caracteres.')
+                    }
+                } else {
+                    alert('Por favor, insira um endereço de e-mail válido.')
+                }
+            }
+        }
+
+        function validarEmail(email) {
+            var arroba = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return arroba.test(email);
+        }
+
+        function validarSenha(senha) {
+            return senha.length >= 8
         }
 
     </script>
 
 </head>
-<body>
+
+<body bgcolor="#CCCCFF">
     <font face="Courier New">
         <h1 align="center"><i>Cadastro</i></h1>
         <h3 align="center"><i>Por favor, realize o cadastro e insira sua forma de pagamento.</i></h3>
     </font>
 
-    <table align="center" border="1">
+    <table align="center" border="1" cellspacing="0">
         <tr>
             <td>
                 <form>
-                    <p>
-                        <label>Nome:</label>
-                        <input type="text" name="nome" id="nome" />
-                    </p>
                     <p>
                         <label>Email:</label>
                         <input type="email" name="email" id="email">
                     </p>
                     <p>
-                        <textarea cols="40" rows="5" name="comentario" id="comentario"></textarea>
+                        <label>Senha:</label>
+                        <input type="password" name="senha" id="senha" />
                     </p>
+                    <p>
+                        <label>Escolha sua forma de pagamento:</label>
+                    </p>
+                    <select name="">
+                        <option>Nenhum</option>
+                        <option>Cartão de Crédito</option>
+                        <option>Cartão de Débito</option>
+                        <option>Paypal</option>
+                    </select>
                     <p>
                         <button onclick="cadastro()">Cadastrar</button>
                     </p>
@@ -44,4 +75,5 @@
     </table>
 
 </body>
+
 </html>
